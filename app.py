@@ -82,7 +82,7 @@ ingredients = st.text_area(
 st.divider()
 
 # --- Photo Upload: Auto-detect Ingredients ---
-st.markdown("#### 📸 Or snap a photo of your fridge/ingredients")
+st.markdown("#### 📸 Or snap a photo of your fridge/pantry")
 photo = st.file_uploader(
     "Upload a photo and I'll detect the ingredients for you",
     type=["jpg", "jpeg", "png", "webp"],
@@ -176,14 +176,14 @@ with col2:
 with col3:
     cook_time = st.selectbox(
         "⏱️ Cook time",
-        ["Any", "Quick (under 15 min)", "Medium (15-30 min)", "L0 min)", "Slow (60+ min)"]
+        ["Any", "Quick (under 15 min)", "Medium (15-30 min)", "Long (30-60 min)", "Slow (60+ min)"]
     )
 
 # --- Generate ---
 if st.button("👨‍🍳 Find Recipes!", use_container_width=True, type="primary"):
     if not api_key:
         st.error("❌ Please enter your OpenRouter API key in the sidebar")
-    elif not ingredients.strip():ong (30-6
+    elif not ingredients.strip():
         st.warning("⚠️ Please enter at least one ingredient!")
     else:
         prompt = f"""You are a professional chef and nutritionist.
